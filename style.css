@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Jura:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Variáveis de Cores */
 :root {
   --main-bg-color: #1e1e1e;
   --primary-color: #686931;
@@ -11,6 +12,7 @@
 body {
   background-color: #b49b2c40;
 }
+
 nav {
   font-family: 'Jura';
   font-weight: bold;
@@ -22,42 +24,77 @@ h1 {
   font-weight: bold;
   font-size: 85px;
 }
+
 h2 {
   font-family: 'Jura';
 }
+
 ul {
   list-style: none;
   font-family: 'Jura';
 }
+
 .text-brand {
-  color: #686931; /* substitua pelo seu código de cor */
+  color: #686931; /* Cor primária */
 }
+
 img {
   width: 760px;
 }
-.box {
-  padding: 40px 0px;
-  --b: 10px; /* thickness of the border */
-  --c: black; /* color of the border */
-  --w: 50px; /* width of border */
 
-  border: var(--b) solid #0000; /* space for the border */
+/* Box com Gradiente Circular */
+.box {
+  padding: 40px 0;
+  --b: 10px; /* espessura da borda */
+  --c: black; /* cor da borda */
+  --w: 50px; /* largura da borda */
+
+  border: var(--b) solid #0000; /* espaço para a borda */
   --_g: #0000 90deg, var(--c) 0;
   --_p: var(--w) var(--w) border-box no-repeat;
 
   background: conic-gradient(
-        from 90deg at top var(--b) left var(--b),
-        var(--_g)
-      )
-      0 0 / var(--_p),
-    conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g))
-      100% 100% / var(--_p);
+    from 90deg at top var(--b) left var(--b),
+    var(--_g)
+  )
+    0 0 / var(--_p),
+  conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g))
+    100% 100% / var(--_p);
 }
+
+/* Seção 2 */
 .section-2 {
   height: 570px;
 }
-button{
+
+/* Botões */
+button {
   font-family: 'Jura';
   font-weight: bold;
   font-size: 25px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  nav .navbar-nav .nav-link {
+    font-size: 1.25rem;
+  }
+
+  .section-2 h2 {
+    font-size: 1.75rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 8px 25px;
+    font-family: 'Jura';
+  }
+
+  .box {
+    padding: 30px 0;
+  }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,17 +14,17 @@
   </head>
   <body>
     <!-- Hero Section -->
-
     <header class="position-relative">
       <img
         src="/img/Hero.png"
-        alt="Imagem"
+        alt="Vista aérea de uma cidade, representando a liberdade de viajar e trabalhar"
         class="img-fluid w-100"
         style="height: 100vh; object-fit: cover"
       />
       <nav
         class="navbar navbar-expand-lg bg-transparent position-absolute w-100"
         style="top: 0; left: 0; z-index: 10"
+        aria-label="Menu de navegação principal"
       >
         <div class="container-fluid">
           <button
@@ -32,10 +32,12 @@
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Alternar navegação"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-
           <div
             class="collapse navbar-collapse justify-content-end"
             id="navbarNav"
@@ -59,6 +61,7 @@
       </nav>
       <h1
         class="position-absolute top-50 start-50 translate-middle text-white text-uppercase fw-bold text-center"
+        aria-label="Logo Living Around"
       >
         Living Around
       </h1>
@@ -66,7 +69,8 @@
     <!---->
     <main>
       <!--Segunda Parte-->
-      <div class="container section-2">
+      <!-- Segunda Parte -->
+      <section class="container section-2">
         <div class="row h-100 align-items-center">
           <!-- Coluna esquerda -->
           <div class="col-12 col-md-5">
@@ -75,6 +79,7 @@
               lugar, descubra o <span class="text-brand">mundo</span>.
             </h2>
           </div>
+
           <!-- Coluna direita -->
           <div class="col-12 col-md-6 border-start border-2 border-dark">
             <h2 class="fs-2 fw-normal text-center">Trabalhos Remotos</h2>
@@ -100,18 +105,16 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!--Terceira parte-->
-
-      <!--Imagem Kombi-->
-      <div class="row align-items-stretch bg-black">
+      <section class="row align-items-stretch bg-black">
         <!-- Coluna da imagem -->
         <div class="col-12 col-md-5 p-0 position-relative">
           <img
             class="img-fluid w-100 h-100 object-fit-cover"
             src="/img/kombi00.png"
-            alt="Kombi em uma rua que no fundo aparece o mar"
+            alt="Imagem de uma Kombi em uma rua com o mar ao fundo"
           />
         </div>
 
@@ -127,11 +130,10 @@
             Descobrir
           </button>
         </div>
-      </div>
-      <!--4 Parte-->
-      <div class="row align-items-stretch min-vh-75">
-        
-          <div
+      </section>
+      <!-- Quarta Parte -->
+      <section class="row align-items-stretch min-vh-75">
+        <div
           class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center text-light text-center p-5"
         >
           <h2 class="mb-4 text-black">Temos destinos especiais para você</h2>
@@ -139,28 +141,33 @@
             type="button"
             class="btn btn-outline-dark px-4 py-2 rounded-pill"
           >
-           Explorar
+            Explorar
           </button>
-        </div> 
-        <div class="col-12 col-md-6 p-0 position-relative"> 
+        </div>
+        <div class="col-12 col-md-6 p-0 position-relative">
           <img
             class="img-fluid w-100 h-100 object-fit-cover"
             src="/img/estrada-floresta.png"
-            alt="estrada dentro de uma estrada-floresta"
+            alt="Estrada em uma floresta"
           />
         </div>
-      </div>
-      </div>
+      </section>
+
       <!--Ultima parte - Botão BLOG-->
-      <div>
-        <img src="/img/phone-note.png" class="img-fluid w-100 h-100 object-fit-cover" alt="Imagem de um celular em cima de um caderno e no canto inferior esquerdo aparece um teclado de um portatil">
-        <button
-            type="button"
-            class="btn btn-outline-dark px-4 py-2 rounded-pill bg-black text-white"
-          >
-           BLOG
-          </button>
-      </div>
+     <section class="d-flex justify-content-center align-items-center position-relative">
+  <img
+    src="/img/phone-note.png"
+    class="img-fluid w-100 h-100 object-fit-cover"
+    alt="Imagem de um celular sobre um caderno com o teclado de um laptop visível"
+  />
+  <button
+    type="button"
+    class="btn btn-outline-dark bg-black text-white rounded-pill px-4 py-2 position-absolute fs-4"
+    style="z-index: 10;"
+  >
+    BLOG
+  </button>
+</section>
     </main>
 
     <footer>

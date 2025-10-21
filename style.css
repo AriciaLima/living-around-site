@@ -54,17 +54,20 @@ img {
   --_p: var(--w) var(--w) border-box no-repeat;
 
   background: conic-gradient(
-    from 90deg at top var(--b) left var(--b),
-    var(--_g)
-  )
-    0 0 / var(--_p),
-  conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g))
-    100% 100% / var(--_p);
+        from 90deg at top var(--b) left var(--b),
+        var(--_g)
+      )
+      0 0 / var(--_p),
+    conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g))
+      100% 100% / var(--_p);
 }
 
 /* Seção 2 */
 .section-2 {
   height: 570px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  padding: clamp(3rem, 8vw, 6rem) 2rem;
 }
 
 /* Botões */
@@ -72,6 +75,39 @@ button {
   font-family: 'Jura';
   font-weight: bold;
   font-size: 25px;
+}
+/* o pai precisa ser position: relative */
+.bg-black.position-relative,
+.section-relative {
+  position: relative;
+}
+
+/* botão fixo dentro da seção */
+.btn-to-top {
+  position: absolute; /* relativo à seção */
+  bottom: 20px;
+  right: 20px;
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.btn-to-top img {
+  width: 58px;
+  height: 58px;
+  display: block;
+}
+
+.btn-to-top:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
 }
 
 /* Responsividade */

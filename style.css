@@ -54,6 +54,7 @@ button {
   font-family: 'Jura', sans-serif;
   font-weight: bold;
   font-size: 25px;
+  border: none;
 }
 
 /* o pai precisa ser position: relative */

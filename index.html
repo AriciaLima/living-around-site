@@ -69,47 +69,50 @@
     <!---->
     <main>
       <!--2 Seçao-->
-<section class="container section-2">
-  <div class="row h-100 align-items-center g-4 g-lg-5">
-    <!-- Coluna esquerda -->
-    <div class="col-12 col-md-5 pe-md-5">
-      <h2 class="manifesto text-center text-md-start">
-        Viva <span class="text-brand">livre</span>, trabalhe de qualquer
-        lugar, descubra o <span class="text-brand">mundo</span>.
-      </h2>
-    </div>
-
-    <!-- Coluna direita -->
-    <div class="col-12 col-md-6 border-start border-2 border-dark ps-md-5 mt-4 mt-md-0">
-      <h2 class="remote-title text-center text-md-start">Trabalhos Remotos</h2>
-      <div class="box mt-3">
-        <div class="row row-cols-2">
-          <div class="col text-center text-md-start">
-            <ul class="fs-6 fw-bold mb-0">
-              <li>Indeed</li>
-              <li>LinkedIn</li>
-              <li>JobRemote</li>
-              <li>GoogleJobs</li>
-            </ul>
+      <section class="container section-2">
+        <div class="row h-100 align-items-center g-4 g-lg-5">
+          <!-- Coluna esquerda -->
+          <div class="col-12 col-md-5 pe-md-5">
+            <h2 class="manifesto text-center text-md-start">
+              Viva <span class="text-brand">livre</span>, trabalhe de qualquer
+              lugar, descubra o <span class="text-brand">mundo</span>.
+            </h2>
           </div>
-          <div class="col text-center text-md-start">
-            <ul class="fs-6 fw-bold mb-0">
-              <li>Indeed</li>
-              <li>LinkedIn</li>
-              <li>JobRemote</li>
-              <li>GoogleJobs</li>
-            </ul>
+
+          <!-- Coluna direita -->
+          <div
+            class="col-12 col-md-6 border-start border-2 border-dark ps-md-5 mt-4 mt-md-0"
+          >
+            <h2 class="remote-title text-center text-md-start">
+              Trabalhos Remotos
+            </h2>
+            <div class="box mt-3">
+              <div class="row row-cols-2">
+                <div class="col text-center text-md-start">
+                  <ul class="fs-6 fw-bold mb-0">
+                    <li>Indeed</li>
+                    <li>LinkedIn</li>
+                    <li>JobRemote</li>
+                    <li>GoogleJobs</li>
+                  </ul>
+                </div>
+                <div class="col text-center text-md-start">
+                  <ul class="fs-6 fw-bold mb-0">
+                    <li>Indeed</li>
+                    <li>LinkedIn</li>
+                    <li>JobRemote</li>
+                    <li>GoogleJobs</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-
-      <!--Terceira parte kombi + bloco escuro -->
+      <!-- Seção 3 — Kombi + bloco escuro -->
+      <!-- Seção 3 — Kombi + bloco escuro -->
       <section class="row align-items-stretch bg-black position-relative">
-        <!-- Imagem -->
         <div class="col-12 col-md-5 p-0">
           <img
             class="img-fluid w-100 h-100 object-fit-cover"
@@ -117,8 +120,6 @@
             alt="Imagem de uma Kombi"
           />
         </div>
-
-        <!-- Texto + botão -->
         <div
           class="col-12 col-md-7 d-flex flex-column justify-content-center align-items-center text-light text-center p-5 position-relative"
         >
@@ -130,10 +131,9 @@
             Descobrir
           </button>
 
-          <!-- Botão subir -->
+          <!-- Botão de seta fixo no canto inferior direito da Seção 3 -->
           <button
-            id="toTopSection"
-            class="btn-to-top"
+            class="btn-to-top btn-white position-absolute bottom-0 end-0 mb-4 me-4"
             aria-label="Voltar ao topo"
           >
             <img src="icons/arrow-up.svg" alt="Ícone de seta para cima" />
@@ -142,8 +142,7 @@
       </section>
 
       <!-- Seção 4 — Destinos Especiais -->
-
-      <section class="row align-items-stretch">
+      <section class="row align-items-stretch position-relative">
         <div
           class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center text-light text-center p-5"
         >
@@ -162,6 +161,14 @@
             alt="Estrada em uma floresta"
           />
         </div>
+
+        <!-- Botão de seta fixo no canto inferior esquerdo da Seção 4 -->
+        <button
+          class="btn-to-top btn-black position-absolute bottom-0 start-0 mb-4 ms-4"
+          aria-label="Voltar ao topo"
+        >
+          <img src="icons/arrow-up.svg" alt="Ícone de seta para cima" />
+        </button>
       </section>
 
       <!--Seçao 5 - Blog-->
@@ -180,18 +187,44 @@
         >
           BLOG
         </button>
+         <button
+            class="btn-to-top btn-black position-absolute bottom-0 end-0 mb-4 me-4"
+            aria-label="Voltar ao topo"
+          >
+            <img src="icons/arrow-up.svg" alt="Ícone de seta para cima" />
+          </button>
       </section>
     </main>
 
-    <footer>
-      <!--Footer-->
-    </footer>
+   <footer class="bg-dark text-white text-center py-4">
+  <div class="container">
+    <!-- Nome do site -->
+    <h5 class="mb-4">LIVING AROUND</h5>
+
+    <!-- Ícones de redes sociais (SVG) -->
+    <div class="mb-4">
+      <a href="#" class="text-white mx-2">
+        <img src="icons/facebook.svg" alt="Facebook" class="footer-icon"> <!-- Ícone SVG do Facebook -->
+      </a>
+      <a href="#" class="text-white mx-2">
+        <img src="icons/instagram.svg" alt="Instagram" class="footer-icon"> <!-- Ícone SVG do Instagram -->
+      </a>
+      <a href="#" class="text-white mx-2">
+        <img src="icons/twitter.svg" alt="Twitter" class="footer-icon"> <!-- Ícone SVG do Twitter -->
+      </a>
+    </div>
+
+    <!-- Texto de créditos -->
+    <p class="mb-0">Power by Cesse Digital</p>
+  </div>
+</footer>
+
     <!--Script-->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
-      src="script.js"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>

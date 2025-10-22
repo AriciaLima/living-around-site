@@ -1,6 +1,5 @@
 /* Fontes */
-@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Jura:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Variáveis de Cores */
 :root {
@@ -14,24 +13,24 @@ body {
 }
 
 nav {
-  font-family: 'Jura';
+  font-family: 'Jura', sans-serif;
   font-weight: bold;
   font-size: 25px;
 }
 
 h1 {
-  font-family: 'Josefin Slab';
+  font-family: 'Josefin Slab', serif;
   font-weight: bold;
   font-size: 85px;
 }
 
 h2 {
-  font-family: 'Jura';
+  font-family: 'Jura', sans-serif;
 }
 
 ul {
   list-style: none;
-  font-family: 'Jura';
+  font-family: 'Jura', sans-serif;
 }
 
 .text-brand {
@@ -40,26 +39,6 @@ ul {
 
 img {
   width: 760px;
-}
-
-/* Box com Gradiente Circular */
-.box {
-  padding: 40px 0;
-  --b: 10px; /* espessura da borda */
-  --c: black; /* cor da borda */
-  --w: 50px; /* largura da borda */
-
-  border: var(--b) solid #0000; /* espaço para a borda */
-  --_g: #0000 90deg, var(--c) 0;
-  --_p: var(--w) var(--w) border-box no-repeat;
-
-  background: conic-gradient(
-        from 90deg at top var(--b) left var(--b),
-        var(--_g)
-      )
-      0 0 / var(--_p),
-    conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g))
-      100% 100% / var(--_p);
 }
 
 /* Seção 2 */
@@ -72,10 +51,11 @@ img {
 
 /* Botões */
 button {
-  font-family: 'Jura';
+  font-family: 'Jura', sans-serif;
   font-weight: bold;
   font-size: 25px;
 }
+
 /* o pai precisa ser position: relative */
 .bg-black.position-relative,
 .section-relative {
@@ -84,18 +64,12 @@ button {
 
 /* botão fixo dentro da seção */
 .btn-to-top {
-  position: absolute; /* relativo à seção */
+  position: absolute;
   bottom: 20px;
   right: 20px;
   width: 58px;
   height: 58px;
-  padding: 0;
-  border: none;
   background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
   z-index: 10;
 }
 
@@ -108,6 +82,48 @@ button {
 .btn-to-top:hover {
   opacity: 0.9;
   transform: translateY(-2px);
+}
+
+/* Estilos para o Footer */
+footer {
+  background-color: #343a40; /* Cor de fundo escura */
+  color: #fff; /* Cor do texto branca */
+}
+
+footer a {
+  text-decoration: none; /* Remover sublinhado dos links */
+}
+
+footer a:hover {
+  opacity: 0.7; /* Efeito de hover nos links */
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer h5 {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+footer .footer-icon {
+  width: 32px; /* Tamanho inicial dos ícones */
+  height: 32px; /* Tamanho inicial dos ícones */
+  transition: transform 0.3s ease;
+}
+
+footer .footer-icon:hover {
+  transform: scale(1.1); /* Efeito de aumento nos ícones ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  footer .footer-icon {
+    width: 28px; /* Reduzir o tamanho dos ícones para telas menores */
+    height: 28px;
+  }
 }
 
 /* Responsividade */
@@ -127,7 +143,6 @@ button {
   button {
     font-size: 1rem;
     padding: 8px 25px;
-    font-family: 'Jura';
   }
 
   .box {

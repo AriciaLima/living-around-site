@@ -21,44 +21,46 @@
         class="img-fluid w-100"
         style="height: 100vh; object-fit: cover"
       />
-      <nav
-        class="navbar navbar-expand-lg bg-transparent position-absolute w-100"
-        style="top: 0; left: 0; z-index: 10"
-        aria-label="Menu de navegação principal"
-      >
-        <div class="container-fluid">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Alternar navegação"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="navbarNav"
-          >
-            <ul class="navbar-nav gap-5">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Acomodação</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="locals.html">Locais</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/contacts.html">Contatos</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <nav
+  class="navbar navbar-expand-lg navbar-light bg-transparent position-absolute w-100"
+  style="top: 0; left: 0; z-index: 10"
+  aria-label="Menu de navegação principal"
+>
+  <div class="container-fluid">
+    <!-- BOTÃO HAMBÚRGUER à direita -->
+    <button
+      class="navbar-toggler ms-auto"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Alternar navegação"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- MENU (permanece à direita em tela grande) -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+     <ul class="navbar-nav gap-5 align-items-end text-end align-items-lg-center ms-lg-0">
+  <li class="nav-item">
+    <a class="nav-link active text-dark fw-semibold" href="#">Acomodação</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-dark fw-semibold" href="locals.html">Locais</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-dark fw-semibold" href="#">Blog</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-dark fw-semibold" href="/contacts.html">Contatos</a>
+  </li>
+</ul>
+
+    </div>
+  </div>
+</nav>
+  
       <h1
         class="position-absolute top-50 start-50 translate-middle text-white text-uppercase fw-bold text-center"
         aria-label="Logo Living Around"

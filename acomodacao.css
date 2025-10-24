@@ -1,0 +1,192 @@
+/* Styles specific to acomodacao.html
+   These rules were moved out of style.css to avoid conflicts and make page-scoped edits safer.
+   Loaded only by acomodacao.html. */
+
+.acomodacao-page .card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.acomodacao-page .ratio {
+  /* Larger image area to give cards more visual height */
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.acomodacao-page .ratio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.acomodacao-page .card-body {
+  background: #efefef; /* soft light panel */
+  border-radius: 0 0 18px 18px;
+  padding: 2.2rem 2rem;
+}
+
+/* Ensure all cards have the same perceived height and layout */
+.acomodacao-page .row.align-items-stretch > [class*='col-'] {
+  display: flex;
+}
+
+.acomodacao-page .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 760px; /* desktop target height for larger cards */
+}
+
+.acomodacao-page .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto; /* fill remaining space */
+  padding: 2.2rem 2rem;
+  align-items: center;
+}
+
+.acomodacao-page .card-text {
+  flex: 1 1 auto; /* let description grow and push +info to bottom */
+  margin-bottom: 0.8rem;
+}
+
+.acomodacao-page .info-link {
+  margin-top: auto;
+  text-align: center;
+  color: #222;
+  font-size: 0.9rem;
+  padding-top: 0.6rem;
+}
+
+.acomodacao-page .info-link {
+  color: #222;
+  letter-spacing: 0.02em;
+}
+
+.acomodacao-page .card:hover {
+  /* hover intentionally disabled per user request */
+  transform: none;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Visual tweaks to match provided mock */
+.acomodacao-page .card {
+  border-radius: 18px; /* slightly smaller so inner radius looks consistent */
+}
+
+.acomodacao-page .ratio img {
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.acomodacao-page .card-body {
+  padding-top: 1.8rem;
+  padding-bottom: 2.4rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+}
+
+.acomodacao-page .card-title {
+  text-align: center;
+  font-family: 'Josefin Slab', serif;
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+  font-size: 1.15rem;
+}
+
+.acomodacao-page .card-text {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.acomodacao-page .info-link {
+  display: block;
+  text-align: center;
+  color: #222;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding-top: 0.6rem;
+}
+
+.acomodacao-page .card {
+  background-clip: padding-box; /* keep rounded corners clean */
+}
+
+/* Center grid on wide screens and tighten spacing so cards appear grouped */
+.acomodacao-page .container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.acomodacao-page .row.g-4 {
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  /* Make the hero shorter on mobile so content appears sooner */
+  .hero-img {
+    height: 60svh;
+    min-height: 60vh;
+  }
+
+  /* Make cards more compact on mobile */
+  .acomodacao-page .ratio {
+    min-height: 220px;
+  }
+
+  .acomodacao-page .card-body {
+    padding-top: 1rem;
+    padding-bottom: 1.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .acomodacao-page .card-title {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .acomodacao-page .card-text {
+    font-size: 0.9rem;
+  }
+
+  .acomodacao-page .info-link {
+    font-size: 0.85rem;
+  }
+
+  /* Reduce gaps between cards on small screens */
+  .acomodacao-page .row.g-4 {
+    gap: 1rem;
+  }
+
+  /* On mobile keep cards readable but not tiny */
+  .acomodacao-page .card {
+    min-height: 520px;
+  }
+}
+
+/* Small helper adjustments for content alignment inside cards */
+.acomodacao-page .card-body {
+  align-items: center;
+}
+
+.acomodacao-page .card-price {
+  width: 100%;
+  text-align: center;
+}
+
+.acomodacao-page .card-desc,
+.acomodacao-page .equip-list {
+  width: 100%;
+  text-align: left;
+}
+
+.acomodacao-page .equip-list {
+  padding-left: 1rem;
+}

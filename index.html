@@ -16,51 +16,63 @@
     <!-- Hero Section -->
     <header class="position-relative hero">
       <img
-        src="/img/Hero.png"
+        src="img/Hero.png"
         alt="Vista aérea de uma cidade, representando a liberdade de viajar e trabalhar"
-        class="img-fluid w-100"
-        style="height: 100vh; object-fit: cover"
+        class="img-fluid w-100 hero-img"
+        loading="eager"
+        fetchpriority="high"
       />
-    <nav
-  class="navbar navbar-expand-lg navbar-light bg-transparent position-absolute w-100"
-  style="top: 0; left: 0; z-index: 10"
-  aria-label="Menu de navegação principal"
->
-  <div class="container-fluid">
-    <!-- BOTÃO HAMBÚRGUER à direita -->
-    <button
-      class="navbar-toggler ms-auto"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Alternar navegação"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-transparent position-absolute w-100"
+        style="top: 0; left: 0; z-index: 10"
+        aria-label="Menu de navegação principal"
+      >
+        <div class="container-fluid">
+          <!-- BOTÃO HAMBÚRGUER à direita -->
+          <button
+            class="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Alternar navegação"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-    <!-- MENU (permanece à direita em tela grande) -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-     <ul class="navbar-nav gap-5 align-items-end text-end align-items-lg-center ms-lg-0">
-  <li class="nav-item">
-    <a class="nav-link active text-dark fw-semibold" href="#">Acomodação</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link text-dark fw-semibold" href="locals.html">Locais</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link text-dark fw-semibold" href="#">Blog</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link text-dark fw-semibold" href="/contacts.html">Contatos</a>
-  </li>
-</ul>
+          <!-- MENU (permanece à direita em tela grande) -->
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul
+              class="navbar-nav gap-5 align-items-end text-end align-items-lg-center ms-lg-0"
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link active fw-semibold"
+                  href="acomodacao.html"
+                  aria-current="page"
+                  >Acomodação</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-semibold" href="locals.html">Locais</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-semibold" href="#">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-semibold" href="contacts.html"
+                  >Contatos</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-    </div>
-  </div>
-</nav>
-  
       <h1
         class="position-absolute top-50 start-50 translate-middle text-white text-uppercase fw-bold text-center"
         aria-label="Logo Living Around"
@@ -70,12 +82,14 @@
     </header>
     <!---->
     <main>
-      <!--2 Seçao-->
-      <section class="container section-2">
-        <div class="row h-100 align-items-center g-4 g-lg-5">
+      <!--Seçao 2 -->
+      <section class="container section-2 py-4 py-lg-5 px-2 px-md-4">
+        <div
+          class="row h-100 align-items-center justify-content-center g-4 g-lg-5"
+        >
           <!-- Coluna esquerda -->
-          <div class="col-12 col-md-5 pe-md-5">
-            <h2 class="manifesto text-center text-md-start">
+          <div class="col-12 col-md-5 pe-md-5 d-flex align-items-center">
+            <h2 class="manifesto w-100 text-center text-md-start">
               Viva <span class="text-brand">livre</span>, trabalhe de qualquer
               lugar, descubra o <span class="text-brand">mundo</span>.
             </h2>
@@ -83,28 +97,35 @@
 
           <!-- Coluna direita -->
           <div
-            class="col-12 col-md-6 border-start border-2 border-dark ps-md-5 mt-4 mt-md-0"
+            class="col-12 col-md-6 d-flex align-items-center ps-md-5 mt-4 mt-md-0"
           >
-            <h2 class="remote-title text-center text-md-start">
-              Trabalhos Remotos
-            </h2>
-            <div class="box mt-3">
-              <div class="row row-cols-2">
-                <div class="col text-center text-md-start">
-                  <ul class="fs-6 fw-bold mb-0">
-                    <li>Indeed</li>
-                    <li>LinkedIn</li>
-                    <li>JobRemote</li>
-                    <li>GoogleJobs</li>
-                  </ul>
-                </div>
-                <div class="col text-center text-md-start">
-                  <ul class="fs-6 fw-bold mb-0">
-                    <li>Indeed</li>
-                    <li>LinkedIn</li>
-                    <li>JobRemote</li>
-                    <li>GoogleJobs</li>
-                  </ul>
+            <div class="w-100 d-flex">
+              <div
+                class="d-none d-md-block border-start border-2 border-dark me-4"
+              ></div>
+              <div class="flex-grow-1">
+                <h2 class="remote-title w-100 text-center text-md-start">
+                  Trabalhos Remotos
+                </h2>
+                <div class="box mt-3 p-3">
+                  <div class="row row-cols-2">
+                    <div class="col text-center text-md-start">
+                      <ul class="fs-6 fw-bold mb-0">
+                        <li>Indeed</li>
+                        <li>LinkedIn</li>
+                        <li>JobRemote</li>
+                        <li>GoogleJobs</li>
+                      </ul>
+                    </div>
+                    <div class="col text-center text-md-start">
+                      <ul class="fs-6 fw-bold mb-0">
+                        <li>Indeed</li>
+                        <li>LinkedIn</li>
+                        <li>JobRemote</li>
+                        <li>GoogleJobs</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -113,13 +134,13 @@
       </section>
 
       <!-- Seção 3 — Kombi + bloco escuro -->
-      <!-- Seção 3 — Kombi + bloco escuro -->
       <section class="row align-items-stretch bg-black position-relative">
         <div class="col-12 col-md-5 p-0">
           <img
             class="img-fluid w-100 h-100 object-fit-cover"
             src="img/kombi00.png"
             alt="Imagem de uma Kombi"
+            loading="lazy"
           />
         </div>
         <div
@@ -138,7 +159,14 @@
             class="btn-to-top btn-white position-absolute bottom-0 end-0 mb-4 me-4"
             aria-label="Voltar ao topo"
           >
-            <img src="icons/arrow-up.svg" alt="Ícone de seta para cima" />
+            <img
+              src="icons/arrow-up.svg"
+              alt="Ícone de seta para cima"
+              class="arrow-icon"
+              width="55"
+              height="55"
+              loading="lazy"
+            />
           </button>
         </div>
       </section>
@@ -159,8 +187,9 @@
         <div class="col-12 col-md-6 p-0">
           <img
             class="img-fluid w-100 h-100 object-fit-cover"
-            src="/img/estrada-floresta.png"
+            src="img/estrada-floresta.png"
             alt="Estrada em uma floresta"
+            loading="lazy"
           />
         </div>
 
@@ -169,7 +198,14 @@
           class="btn-to-top btn-black position-absolute bottom-0 start-0 mb-4 ms-4"
           aria-label="Voltar ao topo"
         >
-          <img src="icons/arrow-up.svg" alt="Ícone de seta para cima" />
+          <img
+            src="icons/arrow-up.svg"
+            alt="Ícone de seta para cima"
+            class="arrow-icon arrow-icon-dark"
+            width="55"
+            height="55"
+            loading="lazy"
+          />
         </button>
       </section>
 
@@ -178,48 +214,76 @@
         class="d-flex justify-content-center align-items-center position-relative"
       >
         <img
-          src="/img/phone-note.png"
+          src="img/phone-note.png"
           class="img-fluid w-100 h-100 object-fit-cover"
           alt="Imagem de um celular sobre um caderno com o teclado de um laptop visível"
+          loading="lazy"
         />
         <button
           type="button"
-          class="btn btn-outline-dark bg-black text-white rounded-pill px-4 py-2 position-absolute fs-4"
+          class="btn btn-outline-dark bg-black text-white rounded-pill px-4 py-2 position-absolute top-50 start-50 translate-middle fs-4"
           style="z-index: 10"
         >
           BLOG
         </button>
-         <button
-            class="btn-to-top btn-black position-absolute bottom-0 end-0 mb-4 me-4"
-            aria-label="Voltar ao topo"
-          >
-            <img src="icons/arrow-up.svg" alt="Ícone de seta para cima" />
-          </button>
+        <button
+          class="btn-to-top btn-black position-absolute bottom-0 end-0 mb-4 me-4"
+          aria-label="Voltar ao topo"
+        >
+          <img
+            src="icons/arrow-up.svg"
+            alt="Ícone de seta para cima"
+            class="arrow-icon arrow-icon-dark"
+            width="55"
+            height="55"
+            loading="lazy"
+          />
+        </button>
       </section>
     </main>
 
-   <footer class="bg-black text-white text-center py-4">
-  <div class="container">
-    <!-- Nome do site -->
-    <h5 class="mb-4">LIVING AROUND</h5>
+    <footer class="bg-black text-white text-center py-4">
+      <div class="container">
+        <!-- Nome do site -->
+        <h5 class="mb-4">LIVING AROUND</h5>
 
-    <!-- Ícones de redes sociais (SVG) -->
-    <div class="mb-4">
-      <a href="#" class="text-white mx-2">
-        <img src="icons/facebook.svg" alt="Facebook" class="footer-icon"> <!-- Ícone SVG do Facebook -->
-      </a>
-      <a href="#" class="text-white mx-2">
-        <img src="icons/instagram.svg" alt="Instagram" class="footer-icon"> <!-- Ícone SVG do Instagram -->
-      </a>
-      <a href="#" class="text-white mx-2">
-        <img src="icons/twitter.svg" alt="Twitter" class="footer-icon"> <!-- Ícone SVG do Twitter -->
-      </a>
-    </div>
+        <!-- Ícones de redes sociais (SVG) -->
+        <div
+          class="mb-4 d-flex gap-3 justify-content-center"
+          role="navigation"
+          aria-label="Redes sociais"
+        >
+          <a
+            href="#"
+            class="text-white d-inline-flex align-items-center justify-content-center"
+            aria-label="Facebook"
+          >
+            <img src="icons/facebook.svg" alt="Facebook" class="footer-icon" />
+          </a>
+          <a
+            href="#"
+            class="text-white d-inline-flex align-items-center justify-content-center"
+            aria-label="Instagram"
+          >
+            <img
+              src="icons/instagram.svg"
+              alt="Instagram"
+              class="footer-icon"
+            />
+          </a>
+          <a
+            href="#"
+            class="text-white d-inline-flex align-items-center justify-content-center"
+            aria-label="Twitter"
+          >
+            <img src="icons/twitter.svg" alt="Twitter" class="footer-icon" />
+          </a>
+        </div>
 
-    <!-- Texto de créditos -->
-    <p class="mb-0">Power by Cesae Digital</p>
-  </div>
-</footer>
+        <!-- Texto de créditos -->
+        <p class="mb-0">Power by Cesae Digital</p>
+      </div>
+    </footer>
 
     <!--Script-->
     <script

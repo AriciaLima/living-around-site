@@ -6,6 +6,8 @@
   --main-bg-color: #1e1e1e;
   --primary-color: #686931;
   --secondary-color: #b49b2c;
+  --icon-size: 55px;
+  --icon-size-mobile: 44px;
 }
 
 body {
@@ -21,7 +23,8 @@ nav {
 h1 {
   font-family: 'Josefin Slab', serif;
   font-weight: bold;
-  font-size: 85px;
+  /* Fonte responsiva para evitar overflow em telas pequenas */
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
 }
 
 h2 {
@@ -33,33 +36,96 @@ ul {
   font-family: 'Jura', sans-serif;
 }
 
+/* Show bullets only for equipment lists inside cards */
+.acomodacao-page .equip-list {
+  list-style: disc inside;
+  margin-left: 0.8rem;
+}
+
+.acomodacao-page .card-price {
+  font-weight: 500;
+  color: #333;
+}
+
+.acomodacao-page .card-desc p {
+  margin: 0 0 0.4rem 0;
+}
+
 .text-brand {
   color: #686931; /* Cor primária */
 }
 
 img {
-  width: 760px;
+  /* Evitar largura fixa que quebra responsividade */
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Seção 2 */
+/* Seção 2 (consolidada) */
 .section-2 {
-  height: 570px;
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
-  padding: clamp(3rem, 8vw, 6rem) 2rem;
+  /* Evitar altura fixa: permitir expansão em telas pequenas */
+  min-height: clamp(360px, 50vh, 720px);
+  /* Restaurar cantos arredondados semelhantes ao design original */
+  border-radius: 24px;
+  overflow: hidden; /* garante que o conteúdo interno não 'vaze' além dos cantos */
+  /* espaçamento agora controlado por utilitários do Bootstrap (py-*, px-*) */
+  box-sizing: border-box;
+  /* Visual específico */
+  background-color: #efe7cc; /* bege claro conforme o mock */
+  color: #1e1e1e;
+}
+
+.manifesto {
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  letter-spacing: 0.25em; /* espaçamento das letras no mock */
+  line-height: 1.6;
+}
+
+.box {
+  position: relative;
+}
+
+/* Cantos decorativos na box (pequenos 'L' pretos nos cantos) */
+.box::before,
+.box::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 6px solid #111;
+}
+.box::before {
+  top: -6px;
+  left: -6px;
+  border-right: none;
+  border-bottom: none;
+}
+.box::after {
+  bottom: -6px;
+  right: -6px;
+  border-left: none;
+  border-top: none;
 }
 
 /* Botões */
 button {
   font-family: 'Jura', sans-serif;
   font-weight: bold;
-  font-size: 25px;
+  /* Tornar tamanho de botão fluido e amigável em mobile */
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   border: none;
 }
 
+/* Utilidade para imagens que devem cobrir o contêiner */
+.object-fit-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* o pai precisa ser position: relative */
-.bg-black.position-relative,
-.section-relative {
+.bg-black.position-relative {
   position: relative;
 }
 
@@ -68,15 +134,34 @@ button {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  width: 58px;
-  height: 58px;
+  /* Tamanho unificado dos botões de subir */
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
   background: transparent;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important; /* garantir que padding das classes btn não atrapalhe */
+  border: none !important;
+  box-sizing: border-box;
   z-index: 10;
 }
 
-.btn-to-top img {
-  width: 58px;
-  height: 58px;
+.btn-to-top img,
+.btn-to-top .arrow-icon {
+  /* fazer o img preencher exatamente o botão */
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  object-fit: contain;
+}
+
+.arrow-icon,
+.arrow-icon-dark,
+.footer-icon {
+  /* regras gerais (quando imagem não estiver dentro de .btn-to-top) */
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
   display: block;
 }
 
@@ -85,9 +170,28 @@ button {
   transform: translateY(-2px);
 }
 
+/* Ajuste para telas menores: reduzir tamanho dos botões mantendo proporção */
+@media (max-width: 768px) {
+  .btn-to-top {
+    width: var(--icon-size-mobile) !important;
+    height: var(--icon-size-mobile) !important;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .btn-to-top img,
+  .btn-to-top .arrow-icon,
+  .arrow-icon,
+  .arrow-icon-dark,
+  .footer-icon {
+    width: var(--icon-size-mobile) !important;
+    height: var(--icon-size-mobile) !important;
+  }
+}
+
 /* Estilos para o Footer */
 footer {
-  background-color: #343a40; /* Cor de fundo escura */
+  background-color: #000; /* Fundo preto para corresponder ao design */
   color: #fff; /* Cor do texto branca */
 }
 
@@ -99,10 +203,7 @@ footer a:hover {
   opacity: 0.7; /* Efeito de hover nos links */
 }
 
-footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+/* container do footer usa utilitários do Bootstrap; ajustes visuais deixam-se aqui se necessário */
 
 footer h5 {
   font-weight: bold;
@@ -110,8 +211,8 @@ footer h5 {
 }
 
 footer .footer-icon {
-  width: 32px; /* Tamanho inicial dos ícones */
-  height: 32px; /* Tamanho inicial dos ícones */
+  width: var(--icon-size); /* padroniza ícones do footer */
+  height: var(--icon-size);
   transition: transform 0.3s ease;
 }
 
@@ -119,16 +220,30 @@ footer .footer-icon:hover {
   transform: scale(1.1); /* Efeito de aumento nos ícones ao passar o mouse */
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  footer .footer-icon {
-    width: 28px; /* Reduzir o tamanho dos ícones para telas menores */
-    height: 28px;
-  }
+/* Botões com altura padronizada para alinhar com os ícones */
+/* .btn-standard removida (usar utilitários do Bootstrap) */
+
+/* Layout dos ícones no footer: quadrados arredondados lado a lado acima dos créditos */
+/* footer layout agora usa utilitários do Bootstrap (d-flex, gap-3) */
+/* footer-social layout substituted by Bootstrap utilities */
+
+/* (arrow-icon handled above together with footer-icon) */
+
+/* Ícones escuros (quando necessários sobre fundo claro) */
+.arrow-icon-dark {
+  /* converter qualquer SVG para preto: bom para pequenos ícones monochrome */
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%)
+    contrast(100%);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
+  footer .footer-icon {
+    width: var(
+      --icon-size-mobile
+    ); /* Reduzir o tamanho dos ícones para telas menores */
+    height: var(--icon-size-mobile);
+  }
+
   h1 {
     font-size: 3.5rem;
   }
@@ -147,6 +262,103 @@ footer .footer-icon:hover {
   }
 
   .box {
-    padding: 30px 0;
+    /* keep layout spacing, box uses Bootstrap padding (p-3) now */
+    padding: 0;
   }
+}
+
+/* Hero image: use svh when available to avoid mobile address-bar issues, fallback to 100vh */
+.hero-img {
+  height: 100svh; /* modern browsers */
+  min-height: 100vh; /* fallback */
+  object-fit: cover;
+}
+
+/* Contacts page styles */
+.contacts-page {
+  position: relative;
+  overflow: hidden;
+}
+
+.contacts-bg {
+  /* Make the background cover the entire viewport and stay behind content */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100svh; /* modern browsers */
+  min-height: 100vh; /* fallback */
+  background-image: url('img/conctact-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+  filter: brightness(0.45) saturate(0.9);
+}
+
+.contact-card {
+  background: rgba(0, 0, 0, 0.95);
+  color: #fff;
+  border-radius: 16px;
+  z-index: 10;
+}
+
+.contact-card .form-control {
+  border-radius: 10px;
+  background: #fff;
+  color: #000;
+}
+
+@media (max-width: 767px) {
+  .contact-card {
+    margin-bottom: 2rem;
+  }
+  .contacts-bg {
+    background-position: top;
+  }
+}
+
+/* Ensure quote on contacts page has no background bar */
+.contacts-page blockquote {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #fff;
+}
+.contacts-page .blockquote-footer {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Acomodacao page styles were moved to acomodacao.css
+   to avoid conflicts and make page-specific edits safer.
+   See acomodacao.css for all `.acomodacao-page` rules. */
+
+/* Success modal custom styles to match provided screenshot */
+.success-modal-custom {
+  max-width: 520px;
+  border-radius: 20px !important;
+}
+
+.success-modal-custom .modal-body p {
+  margin: 0 auto;
+  max-width: 420px;
+  color: #111111;
+}
+
+.btn-success-modal {
+  background: #7fc1ff; /* soft sky-blue like screenshot */
+  border: none;
+  color: #fff;
+  border-radius: 999px;
+  min-width: 140px;
+  box-shadow: 0 6px 18px rgba(127, 193, 255, 0.28);
+}
+
+.btn-success-modal:active,
+.btn-success-modal:focus {
+  outline: none !important;
+  box-shadow: 0 6px 18px rgba(127, 193, 255, 0.28) !important;
 }

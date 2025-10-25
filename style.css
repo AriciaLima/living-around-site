@@ -36,20 +36,7 @@ ul {
   font-family: 'Jura', sans-serif;
 }
 
-/* Show bullets only for equipment lists inside cards */
-.acomodacao-page .equip-list {
-  list-style: disc inside;
-  margin-left: 0.8rem;
-}
-
-.acomodacao-page .card-price {
-  font-weight: 500;
-  color: #333;
-}
-
-.acomodacao-page .card-desc p {
-  margin: 0 0 0.4rem 0;
-}
+/* (Acomodacao page rules moved to acomodacao.css) */
 
 .text-brand {
   color: #686931; /* Cor primária */
@@ -135,14 +122,12 @@ button {
   bottom: 20px;
   right: 20px;
   /* Tamanho unificado dos botões de subir */
-  width: var(--icon-size) !important;
-  height: var(--icon-size) !important;
+  width: var(--icon-size);
+  height: var(--icon-size);
   background: transparent;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 0 !important; /* garantir que padding das classes btn não atrapalhe */
-  border: none !important;
   box-sizing: border-box;
   z-index: 10;
 }
@@ -150,8 +135,8 @@ button {
 .btn-to-top img,
 .btn-to-top .arrow-icon {
   /* fazer o img preencher exatamente o botão */
-  width: 100% !important;
-  height: 100% !important;
+  width: 100%;
+  height: 100%;
   display: block;
   object-fit: contain;
 }
@@ -160,8 +145,8 @@ button {
 .arrow-icon-dark,
 .footer-icon {
   /* regras gerais (quando imagem não estiver dentro de .btn-to-top) */
-  width: var(--icon-size) !important;
-  height: var(--icon-size) !important;
+  width: var(--icon-size);
+  height: var(--icon-size);
   display: block;
 }
 
@@ -173,8 +158,8 @@ button {
 /* Ajuste para telas menores: reduzir tamanho dos botões mantendo proporção */
 @media (max-width: 768px) {
   .btn-to-top {
-    width: var(--icon-size-mobile) !important;
-    height: var(--icon-size-mobile) !important;
+    width: var(--icon-size-mobile);
+    height: var(--icon-size-mobile);
     bottom: 12px;
     right: 12px;
   }
@@ -184,8 +169,8 @@ button {
   .arrow-icon,
   .arrow-icon-dark,
   .footer-icon {
-    width: var(--icon-size-mobile) !important;
-    height: var(--icon-size-mobile) !important;
+    width: var(--icon-size-mobile);
+    height: var(--icon-size-mobile);
   }
 }
 
@@ -336,10 +321,14 @@ footer .footer-icon:hover {
    to avoid conflicts and make page-specific edits safer.
    See acomodacao.css for all `.acomodacao-page` rules. */
 
+/* Acomodação page styles removed per request (cards/columns). If you need
+   any of these rules later, they are archived in the previous commit and can
+   be restored. */
+
 /* Success modal custom styles to match provided screenshot */
 .success-modal-custom {
   max-width: 520px;
-  border-radius: 20px !important;
+  border-radius: 20px;
 }
 
 .success-modal-custom .modal-body p {
@@ -349,7 +338,7 @@ footer .footer-icon:hover {
 }
 
 .btn-success-modal {
-  background: #7fc1ff; /* soft sky-blue like screenshot */
+  background: #000;
   border: none;
   color: #fff;
   border-radius: 999px;
@@ -359,6 +348,14 @@ footer .footer-icon:hover {
 
 .btn-success-modal:active,
 .btn-success-modal:focus {
-  outline: none !important;
-  box-shadow: 0 6px 18px rgba(127, 193, 255, 0.28) !important;
+  box-shadow: 0 6px 18px rgba(127, 193, 255, 0.28);
+}
+
+/* Accessible focus for elements that previously removed outline */
+.btn-success-modal:focus-visible,
+.btn-to-top:focus-visible,
+.arrow-icon:focus-visible,
+.footer-icon:focus-visible {
+  outline: 3px solid rgba(127, 193, 255, 0.6);
+  outline-offset: 3px;
 }

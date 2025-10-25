@@ -6,6 +6,8 @@
   --main-bg-color: #1e1e1e;
   --primary-color: #686931;
   --secondary-color: #b49b2c;
+  /* Background used by the index page section-2 */
+  --section-bg: rgba(180, 155, 44, 0.25);
   --icon-size: 55px;
   --icon-size-mobile: 44px;
 }
@@ -359,3 +361,76 @@ footer .footer-icon:hover {
   outline: 3px solid rgba(127, 193, 255, 0.6);
   outline-offset: 3px;
 }
+
+/* -------------------------------------------------- */
+/* Index page specific styles (migrated from index.css)
+   Scoped under .index-page to avoid overriding global rules. */
+
+/* Large site title used on the homepage */
+.index-page .site-title {
+  font-family: 'Josefin Slab', serif;
+  font-weight: 700;
+  font-size: 85px;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+}
+
+/* Seção 2 (homepage overrides) */
+.index-page .section-2 {
+  min-height: clamp(360px, 50vh, 720px);
+  border-radius: 24px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: var(--section-bg);
+  color: #1e1e1e;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.index-page .manifesto {
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  letter-spacing: 0.25em;
+  line-height: 1.6;
+}
+
+.index-page .box {
+  position: relative;
+}
+
+.index-page .box::before,
+.index-page .box::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 6px solid #111;
+}
+.index-page .box::before {
+  top: -6px;
+  left: -6px;
+  border-right: none;
+  border-bottom: none;
+}
+.index-page .box::after {
+  bottom: -6px;
+  right: -6px;
+  border-left: none;
+  border-top: none;
+}
+
+.index-page .section-2 .box ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.index-page .section-2 .box ul li {
+  margin-bottom: 0.25rem;
+  padding-left: 0;
+}
+
+.index-page .section-2 .manifesto,
+.index-page .section-2 .remote-title {
+  text-align: center !important;
+}
+
+/* End scoped index rules */

@@ -1,6 +1,6 @@
 # 🌍 Living Around
 
-**Site estático** desenvolvido em **HTML, CSS e Bootstrap 5**.  
+**Site ** desenvolvido em **HTML, CSS, Bootstrap 5 e JavaScript**.  
 O projeto apresenta quatro páginas principais: **Home**, **Acomodação**, **Locais** e **Contatos**.  
 O destaque é a página **Locais**, que integra o **Google Maps** e carrega a API **sob demanda**, apenas quando necessário.
 

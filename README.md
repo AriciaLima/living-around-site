@@ -6,6 +6,11 @@ O destaque é a página **Locais**, que integra o **Google Maps** e carrega a AP
 
 ---
 
+## 🔗 Acesse o site
+
+👉 [**https://aricialima.github.io/living-around-site/**](https://aricialima.github.io/living-around-site/)
+
+---
 ## 📁 Estrutura do Projeto
 
 ```

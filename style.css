@@ -7,8 +7,7 @@
   --primary-color: #686931;
   --secondary-color: #b49b2c;
   /* Background used by the index page section-2 */
-  --section-bg: rgba(180, 155, 44, 0.25);
-  --icon-size: 55px;
+  --icon-size: 50px;
   --icon-size-mobile: 44px;
 }
 
@@ -207,16 +206,6 @@ footer .footer-icon:hover {
   transform: scale(1.1); /* Efeito de aumento nos ícones ao passar o mouse */
 }
 
-/* Botões com altura padronizada para alinhar com os ícones */
-/* .btn-standard removida (usar utilitários do Bootstrap) */
-
-/* Layout dos ícones no footer: quadrados arredondados lado a lado acima dos créditos */
-/* footer layout agora usa utilitários do Bootstrap (d-flex, gap-3) */
-/* footer-social layout substituted by Bootstrap utilities */
-
-/* (arrow-icon handled above together with footer-icon) */
-
-/* Ícones escuros (quando necessários sobre fundo claro) */
 .arrow-icon-dark {
   /* converter qualquer SVG para preto: bom para pequenos ícones monochrome */
   filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%)
@@ -495,8 +484,6 @@ footer .footer-icon:hover {
   /* Cor #B49B2C a 25% de opacidade */
   background-color: var(--section-bg);
   color: #1e1e1e;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 /* .manifesto já definida globalmente */

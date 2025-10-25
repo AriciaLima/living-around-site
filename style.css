@@ -38,7 +38,7 @@ ul {
   font-family: 'Jura', sans-serif;
 }
 
-/* (Acomodacao page rules moved to acomodacao.css) */
+/* Utilitários e estilos globais */
 
 .text-brand {
   color: #686931; /* Cor primária */
@@ -60,8 +60,8 @@ img {
   overflow: hidden; /* garante que o conteúdo interno não 'vaze' além dos cantos */
   /* espaçamento agora controlado por utilitários do Bootstrap (py-*, px-*) */
   box-sizing: border-box;
-  /* Visual específico */
-  background-color: #efe7cc; /* bege claro conforme o mock */
+  /* Cor definida por página (ver regras específicas) */
+  background-color: transparent;
   color: #1e1e1e;
 }
 
@@ -306,7 +306,69 @@ footer .footer-icon:hover {
   }
 }
 
-/* Ensure quote on contacts page has no background bar */
+/* Acomodacao page specific styles (merged) */
+.acomodacao-page .card {
+  background-color: #efefef;
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25);
+  padding: 1.2rem;
+}
+.acomodacao-page .card-img-top {
+  border-radius: 10px;
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.acomodacao-page .card-body ul {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
+  padding-left: 0;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.acomodacao-page .card-body ul li {
+  margin-bottom: 0.2em;
+}
+.acomodacao-page .card-title {
+  font-family: 'Jura', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.5px;
+  text-transform: none;
+}
+
+.acomodacao-page .card-img-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.acomodacao-page .more-info {
+  display: inline-block;
+  color: #000 !important;
+  background: transparent;
+  padding: 0.25rem 0.5rem;
+  margin-top: 0.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.acomodacao-page .more-info:hover {
+  text-decoration: underline;
+}
+
+.acomodacao-page .card {
+  position: relative;
+}
+
+/* Citação na página de contatos sem barra de fundo */
 .contacts-page blockquote {
   background: transparent !important;
   box-shadow: none !important;
@@ -319,13 +381,7 @@ footer .footer-icon:hover {
   color: rgba(255, 255, 255, 0.8) !important;
 }
 
-/* Acomodacao page styles were moved to acomodacao.css
-   to avoid conflicts and make page-specific edits safer.
-   See acomodacao.css for all `.acomodacao-page` rules. */
-
-/* Acomodação page styles removed per request (cards/columns). If you need
-   any of these rules later, they are archived in the previous commit and can
-   be restored. */
+/* --- */
 
 /* Success modal custom styles to match provided screenshot */
 .success-modal-custom {
@@ -362,9 +418,7 @@ footer .footer-icon:hover {
   outline-offset: 3px;
 }
 
-/* -------------------------------------------------- */
-/* Index page specific styles (migrated from index.css)
-   Scoped under .index-page to avoid overriding global rules. */
+/* Página inicial (regras sob .index-page para evitar conflitos) */
 
 /* Large site title used on the homepage */
 .index-page .site-title {
@@ -377,46 +431,16 @@ footer .footer-icon:hover {
 
 /* Seção 2 (homepage overrides) */
 .index-page .section-2 {
-  min-height: clamp(360px, 50vh, 720px);
-  border-radius: 24px;
-  overflow: hidden;
-  box-sizing: border-box;
+  /* Cor #B49B2C a 25% de opacidade */
   background-color: var(--section-bg);
   color: #1e1e1e;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.index-page .manifesto {
-  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
-  letter-spacing: 0.25em;
-  line-height: 1.6;
-}
+/* .manifesto já definida globalmente */
 
-.index-page .box {
-  position: relative;
-}
-
-.index-page .box::before,
-.index-page .box::after {
-  content: '';
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  border: 6px solid #111;
-}
-.index-page .box::before {
-  top: -6px;
-  left: -6px;
-  border-right: none;
-  border-bottom: none;
-}
-.index-page .box::after {
-  bottom: -6px;
-  right: -6px;
-  border-left: none;
-  border-top: none;
-}
+/* .box e cantos decorativos já definidos globalmente */
 
 .index-page .section-2 .box ul {
   list-style: none;
@@ -432,5 +456,3 @@ footer .footer-icon:hover {
 .index-page .section-2 .remote-title {
   text-align: center !important;
 }
-
-/* End scoped index rules */

@@ -1,12 +1,9 @@
-/* Fontes */
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Variáveis de Cores */
 :root {
   --main-bg-color: #1e1e1e;
   --primary-color: #686931;
   --secondary-color: #b49b2c;
-  /* Background used by the index page section-2 */
   --icon-size: 50px;
   --icon-size-mobile: 44px;
 }
@@ -24,7 +21,6 @@ nav {
 h1 {
   font-family: 'Josefin Slab', serif;
   font-weight: bold;
-  /* Fonte responsiva para evitar overflow em telas pequenas */
   font-size: clamp(2.5rem, 6vw, 5.5rem);
 }
 
@@ -33,40 +29,42 @@ h2 {
 }
 
 ul {
-  list-style: none;
   font-family: 'Jura', sans-serif;
 }
 
-/* Utilitários e estilos globais */
-
 .text-brand {
-  color: #686931; /* Cor primária */
+  color: var(--primary-color);
 }
 
 img {
-  /* Evitar largura fixa que quebra responsividade */
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Seção 2 (consolidada) */
-.section-2 {
-  /* Evitar altura fixa: permitir expansão em telas pequenas */
-  min-height: clamp(360px, 50vh, 720px);
-  /* Restaurar cantos arredondados semelhantes ao design original */
-  border-radius: 24px;
-  overflow: hidden; /* garante que o conteúdo interno não 'vaze' além dos cantos */
-  /* espaçamento agora controlado por utilitários do Bootstrap (py-*, px-*) */
+.index-page main > section {
+  min-height: clamp(320px, 50svh, 640px);
   box-sizing: border-box;
-  /* Cor definida por página (ver regras específicas) */
-  background-color: transparent;
-  color: #1e1e1e;
+}
+
+.index-page .blog-section {
+  overflow: hidden;
+}
+.index-page .blog-section > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.index-page .blog-section > .btn {
+  z-index: 1;
 }
 
 .manifesto {
   font-size: clamp(1.5rem, 3.5vw, 2.5rem);
-  letter-spacing: 0.25em; /* espaçamento das letras no mock */
+  letter-spacing: 0.25em;
   line-height: 1.6;
 }
 
@@ -74,7 +72,6 @@ img {
   position: relative;
 }
 
-/* Cantos decorativos na box (pequenos 'L' pretos nos cantos) */
 .box::before,
 .box::after {
   content: '';
@@ -96,25 +93,13 @@ img {
   border-top: none;
 }
 
-/* Botões */
 button {
   font-family: 'Jura', sans-serif;
   font-weight: bold;
-  /* Tornar tamanho de botão fluido e amigável em mobile */
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
-  border: none;
 }
 
-/* Utilidade para imagens que devem cobrir o contêiner */
 .object-fit-cover {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-}
-
-/* o pai precisa ser position: relative */
-.bg-black.position-relative {
-  position: relative;
 }
 
 /* botão fixo dentro da seção */
@@ -122,7 +107,6 @@ button {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  /* Tamanho unificado dos botões de subir */
   width: var(--icon-size);
   height: var(--icon-size);
   background: transparent;
@@ -135,7 +119,6 @@ button {
 
 .btn-to-top img,
 .btn-to-top .arrow-icon {
-  /* fazer o img preencher exatamente o botão */
   width: 100%;
   height: 100%;
   display: block;
@@ -145,18 +128,12 @@ button {
 .arrow-icon,
 .arrow-icon-dark,
 .footer-icon {
-  /* regras gerais (quando imagem não estiver dentro de .btn-to-top) */
   width: var(--icon-size);
   height: var(--icon-size);
   display: block;
 }
 
-.btn-to-top:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
-
-/* Ajuste para telas menores: reduzir tamanho dos botões mantendo proporção */
+/* Ajuste para telas menores */
 @media (max-width: 768px) {
   .btn-to-top {
     width: var(--icon-size-mobile);
@@ -175,21 +152,11 @@ button {
   }
 }
 
-/* Estilos para o Footer */
-footer {
-  background-color: #000; /* Fundo preto para corresponder ao design */
-  color: #fff; /* Cor do texto branca */
-}
+/* Footer */
 
 footer a {
-  text-decoration: none; /* Remover sublinhado dos links */
+  text-decoration: none;
 }
-
-footer a:hover {
-  opacity: 0.7; /* Efeito de hover nos links */
-}
-
-/* container do footer usa utilitários do Bootstrap; ajustes visuais deixam-se aqui se necessário */
 
 footer h5 {
   font-weight: bold;
@@ -197,63 +164,30 @@ footer h5 {
 }
 
 footer .footer-icon {
-  width: var(--icon-size); /* padroniza ícones do footer */
-  height: var(--icon-size);
   transition: transform 0.3s ease;
 }
 
 footer .footer-icon:hover {
-  transform: scale(1.1); /* Efeito de aumento nos ícones ao passar o mouse */
+  transform: scale(1.1);
 }
 
 .arrow-icon-dark {
-  /* converter qualquer SVG para preto: bom para pequenos ícones monochrome */
   filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%)
     contrast(100%);
 }
 
-@media (max-width: 768px) {
-  footer .footer-icon {
-    width: var(
-      --icon-size-mobile
-    ); /* Reduzir o tamanho dos ícones para telas menores */
-    height: var(--icon-size-mobile);
-  }
+/* removed empty media query */
 
-  h1 {
-    font-size: 3.5rem;
-  }
-
-  nav .navbar-nav .nav-link {
-    font-size: 1.25rem;
-  }
-
-  .section-2 h2 {
-    font-size: 1.75rem;
-  }
-
-  button {
-    font-size: 1rem;
-    padding: 8px 25px;
-  }
-
-  .box {
-    /* keep layout spacing, box uses Bootstrap padding (p-3) now */
-    padding: 0;
-  }
-}
-
-/* Hero image: use svh when available to avoid mobile address-bar issues, fallback to 100vh */
 .hero-img {
-  height: 100svh; /* modern browsers */
-  min-height: 100vh; /* fallback */
+  height: 100svh;
+  min-height: 100vh;
   object-fit: cover;
 }
 
-/* Página Locais */
 .locals-page {
   position: relative;
   overflow: hidden;
+  --content-width: 460px;
 }
 .brand-logo {
   height: 36px;
@@ -273,18 +207,18 @@ footer .footer-icon:hover {
   background-attachment: fixed;
   z-index: -1;
   filter: brightness(0.45) saturate(0.9);
-  opacity: 0.8; /* 80% de opacidade no fundo */
+  opacity: 0.8;
 }
 .locals-card {
   background: #e6e6e6;
   border-radius: 18px;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
-  width: 460px;
+  width: var(--content-width);
   max-width: 92vw;
 }
 .locals-card .btn-brand {
-  background: var(--primary-color); /* #686931 */
-  color: #fff; /* melhor contraste sobre o fundo escuro */
+  background: var(--primary-color);
+  color: #fff;
   font-weight: 700;
   border-radius: 10px;
 }
@@ -295,37 +229,33 @@ footer .footer-icon:hover {
   background-color: #fff;
 }
 
-/* Card de endereço na página Locais (50% de opacidade de fundo) */
 .locals-addr-card {
   background: rgba(0, 0, 0, 0.5);
-  width: 460px;
+  width: var(--content-width);
   max-width: 92vw;
 }
 
-/* Mapa da página Locais */
 .locals-map {
-  width: 460px;
+  width: var(--content-width);
   max-width: 92vw;
   height: 280px;
   background: #ddd;
   border: 3px solid rgba(255, 255, 255, 0.7);
 }
 
-/* Contacts page styles */
 .contacts-page {
   position: relative;
   overflow: hidden;
 }
 
 .contacts-bg {
-  /* Make the background cover the entire viewport and stay behind content */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100svh; /* modern browsers */
-  min-height: 100vh; /* fallback */
-  background-image: url('img/conctact-bg.png');
+  height: 100svh;
+  min-height: 100vh;
+  background-image: url('img/contact-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -356,7 +286,6 @@ footer .footer-icon:hover {
   }
 }
 
-/* Acomodacao page specific styles (merged) */
 .acomodacao-page .card {
   background-color: #efefef;
   border: none;
@@ -364,6 +293,7 @@ footer .footer-icon:hover {
   overflow: hidden;
   box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25);
   padding: 1.2rem;
+  position: relative;
 }
 .acomodacao-page .card-img-top {
   border-radius: 10px;
@@ -376,7 +306,6 @@ footer .footer-icon:hover {
 .acomodacao-page .card-body ul {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
-  margin-bottom: 1rem;
   margin: 0 0 1rem 0;
   padding-left: 0;
   list-style-type: disc;
@@ -414,11 +343,6 @@ footer .footer-icon:hover {
   text-decoration: underline;
 }
 
-.acomodacao-page .card {
-  position: relative;
-}
-
-/* Citação na página de contatos sem barra de fundo */
 .contacts-page blockquote {
   background: transparent !important;
   box-shadow: none !important;
@@ -431,9 +355,6 @@ footer .footer-icon:hover {
   color: rgba(255, 255, 255, 0.8) !important;
 }
 
-/* --- */
-
-/* Success modal custom styles to match provided screenshot */
 .success-modal-custom {
   max-width: 520px;
   border-radius: 20px;
@@ -459,7 +380,6 @@ footer .footer-icon:hover {
   box-shadow: 0 6px 18px rgba(127, 193, 255, 0.28);
 }
 
-/* Accessible focus for elements that previously removed outline */
 .btn-success-modal:focus-visible,
 .btn-to-top:focus-visible,
 .arrow-icon:focus-visible,
@@ -468,27 +388,9 @@ footer .footer-icon:hover {
   outline-offset: 3px;
 }
 
-/* Página inicial (regras sob .index-page para evitar conflitos) */
-
-/* Large site title used on the homepage */
-.index-page .site-title {
-  font-family: 'Josefin Slab', serif;
-  font-weight: 700;
-  font-size: 85px;
-  line-height: 0.95;
-  letter-spacing: 0.02em;
-}
-
-/* Seção 2 (homepage overrides) */
 .index-page .section-2 {
-  /* Cor #B49B2C a 25% de opacidade */
-  background-color: var(--section-bg);
   color: #1e1e1e;
 }
-
-/* .manifesto já definida globalmente */
-
-/* .box e cantos decorativos já definidos globalmente */
 
 .index-page .section-2 .box ul {
   list-style: none;

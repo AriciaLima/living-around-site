@@ -366,6 +366,16 @@ footer .footer-icon:hover {
   color: #111111;
 }
 
+/* Keep modal centered and scroll content inside if needed */
+.modal-dialog.modal-dialog-centered .success-modal-custom {
+  max-height: calc(100svh - 2rem);
+  display: flex;
+  flex-direction: column;
+}
+.modal-dialog.modal-dialog-centered .success-modal-custom .modal-body {
+  overflow: auto;
+}
+
 .btn-success-modal {
   background: #000;
   border: none;
